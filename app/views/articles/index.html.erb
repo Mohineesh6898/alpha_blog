@@ -1,18 +1,33 @@
-<p>Articles main page </p>
-<table>
-   <thead> 
-    <tr>
-        <th>Title</th>
-        <th>Description</th>
-    </tr>    
-   </thead>
-   <tbody>
-    <% @article.each do |t| %>
-        <tr>
-            <td><%= t.title %></td>
-            <td><%=t.description%></td>
-        </tr>    
-    <%end%>    
-   </tbody>
 
-</table>
+<h1 class="text-center pt-3 pb-3">Listing all articles</h1>
+<% @article.each do |article|%> 
+<div class="container"> 
+    <div class="row d-flex justify-content-center">
+        <div class="col-8">
+            <div class="card text-center mb-3 shadow">
+                <div class="card-header">
+                Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><%=link_to  article.title ,article_path(article),class:"text-success"%></h5>
+                    <p class="card-text"><%= article.description%></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                <div class="card-footer text-muted">
+                    <%=article.created_at%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+<%end%>
+    
+    
+    
+
+
+
+
+
+
+
