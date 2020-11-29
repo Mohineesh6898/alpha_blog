@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: fc652e5248a4132af2c5f5c0b61eeceff02f4316
+  specs:
+    bcrypt (3.1.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,7 +69,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
-    capybara (3.33.0)
+    capybara (3.34.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -82,7 +88,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
-    loofah (2.7.0)
+    loofah (2.8.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -184,12 +190,13 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.1)
+    zeitwerk (2.4.2)
 
 PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt!
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
