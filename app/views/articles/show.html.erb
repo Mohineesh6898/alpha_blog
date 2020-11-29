@@ -6,11 +6,12 @@
         <div class="col-8">
             <div class="card text-center mb-3 shadow">
                 <div class="card-header">
-                        by Mohineesh
+                        by <%= @article.user.username%>
                 </div>
                 <div class="card-body">
                     <p class="card-text"><%= @article.description%></p>
                     <%= link_to 'Edit',edit_article_path(@article),class:"btn btn-outline-success"%>
+                    
                     <%= link_to 'Delete',article_path(@article),method: :delete,class:"btn btn-outline-warning",data: {confirm:"SUre?"}%>
                 </div>
                 <div class="card-footer text-muted">
