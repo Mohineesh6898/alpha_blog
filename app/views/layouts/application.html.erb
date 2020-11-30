@@ -11,9 +11,11 @@
 
   <body>
     <%= render 'layouts/navigation'%>
+    <div class="container bg-success">
     <%flash.each do |name,msg|%>
       <%=msg%>
     <%end%>  
+    </div>
     <%= yield %>
   </body>
 </html>
