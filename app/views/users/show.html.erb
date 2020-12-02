@@ -1,1 +1,27 @@
-<user>
+<div class="bg-color">
+<div class="container">
+<h1 class="m-auto mt-3 pb-3 bg-primary col-5">Hello <%=  @user.username%></h1>
+<% @user.articles.each do |article|%>
+<div class="row d-flex justify-content-center">
+        <div class="col-8">
+            <div class="card text-center mb-3 shadow">
+                <div class="card-header">
+                        by <%= article.title%>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><%= article.description%></p>
+                    <%= link_to 'View',article_path(article),class:"btn btn-primary"%>
+                    <%= link_to 'Edit',edit_article_path(article),class:"btn btn-outline-success"%>
+                    
+                    <%= link_to 'Delete',article_path(article),method: :delete,class:"btn btn-outline-warning",data: {confirm:"SUre?"}%>
+                </div>
+                <div class="card-footer text-muted">
+                    <p>created_at:<%=time_ago_in_words(article.created_at)%></p>
+                </div>
+            </div>
+        </div>
+<%end%>        
+</div>
+<p class=text-center><%=link_to 'Delete User',user_path(@user),method: :delete,class:"btn btn-outline-warning",data: {confirm:"rey sure?"}%></p>
+</div>
+</div>

@@ -11,11 +11,18 @@
 
   <body>
     <%= render 'layouts/navigation'%>
-    <div class="container bg-success">
+    
     <%flash.each do |name,msg|%>
-      <%=msg%>
+      <%if (name=="notice")%>
+        <div class="alert alert-success" role="alert">
+          <%=msg%>
+        </div>
+       <%else%>
+       <div class="alert alert-warning" role="alert">
+       <%=msg%>
+     </div>
     <%end%>  
-    </div>
+  <%end%>
     <%= yield %>
   </body>
 </html>

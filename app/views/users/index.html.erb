@@ -1,3 +1,23 @@
+<h1 class="text-center mt-3">User Profiles</h1>
 <% @user.each do |user|%>
-    <%=user.username%>
-<%end%>    
+<div class="row d-flex justify-content-center">
+        <div class="col-5">
+            <div class="card text-center mb-3 shadow">
+                <div class="card-header">
+                        <%= user.username%>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><%= user.articles.count%> articles</p>
+                     <%=link_to 'View',user_path(user),class:"btn btn-outline-primary"%> 
+                     <%if logged_in? && current_user=user%>  
+                    <%= link_to 'Edit',edit_user_path(user),class:"btn btn-outline-success"%>
+                    <%= link_to 'Delete',article_path(user),method: :delete,class:"btn btn-outline-warning",data: {confirm:"SUre?"}%>
+                    <%end%>   
+                 </div>
+                <div class="card-footer text-muted">
+                    <p>created_at:<%=time_ago_in_words(user.created_at)%></p>
+                </div>
+            </div>
+        </div>
+<%end%>        
+</div>
